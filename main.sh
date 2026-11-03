@@ -10,7 +10,7 @@ fi
 # Main Script
 if [ "$1" = "-g" ]; then
   echo Connecting to Slackbuilds...
-  ping -c 4 slacbuilds.org
+  ping -c 4 slackbuilds.org
   if [ $? -ne 0 ]; then
      echo "Couldn't connect to Slackbuilds, It could be at your end or at Theirs"
      exit 1
