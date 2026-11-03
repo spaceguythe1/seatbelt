@@ -30,6 +30,16 @@ if [ "$1" = "-g" ]; then
   echo -e "${GREEN}DOWNLOAD THE SOURCE CODE AND THE SLACKBUILD${ENDCOLOR}"
   sleep 1
   links $2
+  sleep 1
+  shopt -s nullglob
+  files=(/tmp/seatbelt/*.tar.*)
+  if [ "${#files[@]}" -ge 2 ]; then
+      # continue
+      exit 0
+  else
+      echo -e "${RED}Couldn't find the approprate files. ${ENDCOLOR}"
+      exit 1
+  fi
   
 fi
 
