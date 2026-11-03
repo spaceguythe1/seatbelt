@@ -1,3 +1,4 @@
+dir=$(pwd)
 chmod +x main.sh
 mv main.sh seatbelt
-mv seatbelt /usr/local/bin/
+su -c "mv \"$dir/seatbelt\" /usr/local/bin/"
