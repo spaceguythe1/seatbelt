@@ -50,8 +50,8 @@ int main(int argc, char *argv[]) {
                 else{
                     system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
                     system("/tmp/seatbelt_tmp/*/depend.sh");
-                    system("chmod +x /tmp/seatbelt_tmp/*/build/*.slackbuild");
-                    res = system("/tmp/seatbelt_tmp/*/build/*.slackbuild");
+                    system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
+                    res = system("/tmp/seatbelt_tmp/*/build/*.SlackBuild");
                     if(res != 0){
                         printf("Compilation failed for some reason.\n");
                         return 1;
