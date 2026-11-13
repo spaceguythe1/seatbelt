@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
                 printf("Please specify a package\n");
                 return 1;
             }
-            char sdiasda[231] = "ls /var/log/packages | grep ";
+            char sdiasda[231] = "ls /var/log/packages | grep -i ";
             strcat(sdiasda, argv[2]);
             res = system(sdiasda);
             if(res == 0){
@@ -48,6 +48,7 @@ int main(int argc, char *argv[]) {
                 printf("Download Succeeded, continuing...\n");
                 system("mkdir /tmp/seatbelt_tmp");
                 system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
+
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 printf("Resolving Dependencies...\n");
                 if(res != 0){
