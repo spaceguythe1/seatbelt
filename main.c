@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
                 printf("Download Succeeded, continuing...\n");
                 system("mkdir /tmp/seatbelt_tmp");
                 system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
-
+// hi?
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 printf("Resolving Dependencies...\n");
                 if(res != 0){
