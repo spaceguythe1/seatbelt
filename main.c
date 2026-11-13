@@ -48,17 +48,20 @@ int main(int argc, char *argv[]) {
                 printf("Download Succeeded, continuing...\n");
                 system("mkdir /tmp/seatbelt_tmp");
                 system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
-// hi?
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 printf("Resolving Dependencies...\n");
+                int mastas = 0;
                 if(res != 0){
                     printf("WARNING: NO DEPENDANCY FILE FOUND\n");
                     printf("this means that most likely to package you are trying to install was\n made incorrectly, please contact the creator of this package\n");
                     return 1;
                 }
                 else{
-                    system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
-                    system("/tmp/seatbelt_tmp/*/depend.sh");
+                    if(mastas == 0){
+                        system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
+                        system("/tmp/seatbelt_tmp/*/depend.sh");
+                        mastas = 1;
+                    };
                 }           
 
                 system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
