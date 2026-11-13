@@ -21,6 +21,7 @@ int main(int argc, char *argv[]) {
             printf("Connection Success!\n");
             system("rm /tmp/*.tar.xz");
             system("rm /tmp/*.tar.xz.*");
+            system("rm /tmp/*.tgz");
             char closer[512] = ".tar.xz -P /tmp/";
             char opener[512] = " wget -4 ftp://disee.ddns.net/";
 
@@ -40,7 +41,6 @@ int main(int argc, char *argv[]) {
                 printf("Download Succeeded, continuing...\n");
                 system("rm -r /tmp/seatbelt_tmp");
                 system("mkdir /tmp/seatbelt_tmp");
-                system("mkdir /tmp/seatbelt_tmp/output");
                 system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 if(res != 0){
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
                         return 1;
                     }
                     system("sleep 1");
-                    res = system("installpkg /tmp/seatbelt_tmp/output/*.tgz");
+                    res = system("installpkg /tmp/*.tgz");
                     if(res != 0){
                         printf("Installation failed for some reason.\n");
                         return 1;
