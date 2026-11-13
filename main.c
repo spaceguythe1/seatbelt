@@ -56,8 +56,8 @@ int main(int argc, char *argv[]) {
                     return 1;
                 }
                 else{
-                        system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
-                        system("/tmp/seatbelt_tmp/*/depend.sh");
+                    system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
+                    system("/tmp/seatbelt_tmp/*/depend.sh");
                 }           
 
                 system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
@@ -72,7 +72,6 @@ int main(int argc, char *argv[]) {
                     printf("Installation failed for some reason.\n");
                     return 1;
                 }
-                system("rm -r /tmp/seatbelt_tmp");
             };
         };
     }
