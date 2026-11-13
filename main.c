@@ -36,11 +36,12 @@ int main(int argc, char *argv[]) {
             }
             else{
                 printf("Download Succeeded, continuing...\n");
+                system("rm -r /tmp/seatbelt_tmp");
                 system("mkdir /tmp/seatbelt_tmp");
                 system("mkdir /tmp/seatbelt_tmp/output");
                 system("rm /tmp/*.tar.xz");
                 system("rm /tmp/*.tar.xz.*");
-                system("tar xv /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
+                system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 if(res != 0){
                     printf("WARNING: NO DEPENDANCY FILE FOUND\n");
