@@ -59,6 +59,8 @@ int main(int argc, char *argv[]) {
                 else{
                     system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
                     system("/tmp/seatbelt_tmp/*/depend.sh");
+                    res = system(opener);
+                    system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
                 }           
 
                 system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
