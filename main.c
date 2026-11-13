@@ -38,7 +38,8 @@ int main(int argc, char *argv[]) {
                 printf("Download Succeeded, continuing...\n");
                 system("mkdir /tmp/seatbelt_tmp");
                 system("mkdir /tmp/seatbelt_tmp/output");
-                system("tar -xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
+                system("rm /tmp/*.tar.xz");
+                system("tar xv /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 if(res != 0){
                     printf("WARNING: NO DEPENDANCY FILE FOUND\n");
@@ -48,13 +49,13 @@ int main(int argc, char *argv[]) {
                     system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
                     system("/tmp/seatbelt_tmp/*/depend.sh");
                     system("chmod +x /tmp/seatbelt_tmp/*/build/*.slackbuild");
-                    system("/tmp/seatbelt_tmp/*/build/*.slackbuild");
+                    res = system("/tmp/seatbelt_tmp/*/build/*.slackbuild");
                     if(res != 0){
                         printf("Compilation failed for some reason.\n");
                         return 1;
                     }
                     system("sleep 1");
-                    system("installpkg /tmp/seatbelt_tmp/output/*.tgz");
+                    res = system("installpkg /tmp/seatbelt_tmp/output/*.tgz");
                     if(res != 0){
                         printf("Installation failed for some reason.\n");
                         return 1;
