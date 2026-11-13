@@ -46,33 +46,38 @@ int main(int argc, char *argv[]) {
             }
             else{
                 printf("Download Succeeded, continuing...\n");
-                system("rm -r /tmp/seatbelt_tmp");
-                system("mkdir /tmp/seatbelt_tmp");
-                system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 if(res != 0){
                     printf("WARNING: NO DEPENDANCY FILE FOUND\n");
                     printf("this means that most likely to package you are trying to install was\n made incorrectly, please contact the creator of this package\n");
                 }
                 else{
+                    printf("Resolving Dependencies...\n");
                     system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
                     system("/tmp/seatbelt_tmp/*/depend.sh");
-                    system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
-                    res = system("/tmp/seatbelt_tmp/*/build/*.SlackBuild");
-                    if(res != 0){
-                        printf("Compilation failed for some reason.\n");
-                        return 1;
-                    }
-                    system("sleep 1");
-                    res = system("installpkg /tmp/*.tgz");
-                    if(res != 0){
-                        printf("Installation failed for some reason.\n");
-                        return 1;
-                    }
-                    system("rm -r /tmp/seatbelt_tmp");
+                    system(opener);
                 }
-            };
+                
+                system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
+                system("/tmp/seatbelt_tmp/*/depend.sh");
+                system("rm -r /tmp/seatbelt_tmp");
+                system("mkdir /tmp/seatbelt_tmp");
+                system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
 
+                system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
+                res = system("/tmp/seatbelt_tmp/*/build/*.SlackBuild");
+                if(res != 0){
+                    printf("Compilation failed for some reason.\n");
+                    return 1;
+                }
+                system("sleep 1");
+                res = system("installpkg /tmp/*.tgz");
+                if(res != 0){
+                    printf("Installation failed for some reason.\n");
+                    return 1;
+                }
+                system("rm -r /tmp/seatbelt_tmp");
+            };
         };
     }
     return 0;
