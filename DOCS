@@ -1,5 +1,4 @@
 Seatbelt heirarchy and index
 
-build/ - the directory containing the slackbuild 
-*/ - the second directory is (most of the time) the actual source code for the slackbuild
+build/ - the directory containing the slackbuild & source files.
 depend.sh - an .sh file which contains the dependancies as seatbelt commands.
