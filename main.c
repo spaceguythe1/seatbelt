@@ -19,6 +19,8 @@ int main(int argc, char *argv[]) {
         }
         else{
             printf("Connection Success!\n");
+            system("rm /tmp/*.tar.xz");
+            system("rm /tmp/*.tar.xz.*");
             char closer[512] = ".tar.xz -P /tmp/";
             char opener[512] = " wget -4 ftp://disee.ddns.net/";
 
@@ -39,8 +41,6 @@ int main(int argc, char *argv[]) {
                 system("rm -r /tmp/seatbelt_tmp");
                 system("mkdir /tmp/seatbelt_tmp");
                 system("mkdir /tmp/seatbelt_tmp/output");
-                system("rm /tmp/*.tar.xz");
-                system("rm /tmp/*.tar.xz.*");
                 system("tar xvf /tmp/*.tar.xz -C /tmp/seatbelt_tmp/");
                 res = system("find /tmp/seatbelt_tmp/*/depend.sh");
                 if(res != 0){
