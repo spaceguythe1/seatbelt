@@ -19,16 +19,23 @@ int main(int argc, char *argv[]) {
         }
         else{
             printf("Connection Success!\n");
+            if(argc < 3){
+                printf("Please specify a package\n");
+                return 1;
+            }
+            char sdiasda[231] = "ls /var/log/packages | grep ";
+            strcat(sdiasda, argv[2]);
+            res = system(sdiasda);
+            if(res == 0){
+                printf("Package: %s already installed.\n", argv[2]);
+                return 1;
+            };
             system("rm /tmp/*.tar.xz");
             system("rm /tmp/*.tar.xz.*");
             system("rm /tmp/*.tgz");
             char closer[512] = ".tar.xz -P /tmp/";
             char opener[512] = " wget -4 ftp://disee.ddns.net/";
 
-            if(argc < 3){
-                printf("Please specify a package\n");
-                return 1;
-            }
 
             strcat(opener, argv[2]);
             strcat(opener, closer);
