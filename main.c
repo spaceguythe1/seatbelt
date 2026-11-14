@@ -10,10 +10,10 @@ int main(int argc, char *argv[]) {
         printf("-h - shows this\n");
         printf("-g PACKAGE - gets and installs the PACKAGE package\n");
     };
-    
+
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.23 - 14/11/2026");
+        printf("v1.23 - 14/11/2026\n");
     };
 
     if((strcmp("-g", argv[1])) == 0){
