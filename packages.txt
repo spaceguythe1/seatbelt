@@ -1,6 +1,9 @@
 this isnt used by the manager as it dosent use a package list.
 
-7zip.tar.xz        fastfetch.tar.xz   libcmis.tar.xz      libmspub.tar.xz     myman.tar.xz             xmlsec.tar.xz
-apache-ant.tar.xz  fast_float.tar.xz  libe-book.tar.xz    libreoffice.tar.xz  perl-Archive-Zip.tar.xz  zulu-openjdk17.tar.xz
-cppunit.tar.xz     libabw.tar.xz      libfreehand.tar.xz  libzmf.tar.xz       uasm.tar.xz
-dragonbox.tar.xz   libcdr.tar.xz      liblangtag.tar.xz   llvm-opt.tar.xz     vscodium.tar.xz
+7zip.tar.xz            cppunit.tar.xz            gamemode.tar.xz     liblangtag.tar.xz   nodejs22.tar.xz          qt6.tar.xz
+apache-ant.tar.xz      doas.tar.xz               html5lib.tar.xz     libmspub.tar.xz     OpenJDK17.tar.xz         tomlplusplus.tar.xz
+appstream-glib.tar.xz  double-conversion.tar.xz  libabw.tar.xz       libreoffice.tar.xz  OpenJDK21.tar.xz         uasm.tar.xz
+btop.tar.xz            dragonbox.tar.xz          libcdr.tar.xz       libzmf.tar.xz       OpenJDK8.tar.xz          vscodium.tar.xz
+bubblewrap.tar.xz      fastfetch.tar.xz          libcmis.tar.xz      llvm-opt.tar.xz     ostree.tar.xz            xdg-desktop-portal-gtk.tar.xz
+cmake-opt.tar.xz       fast_float.tar.xz         libe-book.tar.xz    md4c.tar.xz         perl-Archive-Zip.tar.xz  xmlsec.tar.xz
+cmark.tar.xz           flatpak.tar.xz            libfreehand.tar.xz  myman.tar.xz        prismlauncher.tar.xz     zulu-openjdk17.tar.xz
