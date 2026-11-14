@@ -1,0 +1,6 @@
+this isnt used by the manager as it dosent use a package list.
+
+7zip.tar.xz        fastfetch.tar.xz   libcmis.tar.xz      libmspub.tar.xz     myman.tar.xz             xmlsec.tar.xz
+apache-ant.tar.xz  fast_float.tar.xz  libe-book.tar.xz    libreoffice.tar.xz  perl-Archive-Zip.tar.xz  zulu-openjdk17.tar.xz
+cppunit.tar.xz     libabw.tar.xz      libfreehand.tar.xz  libzmf.tar.xz       uasm.tar.xz
+dragonbox.tar.xz   libcdr.tar.xz      liblangtag.tar.xz   llvm-opt.tar.xz     vscodium.tar.xz
