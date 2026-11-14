@@ -2,3 +2,5 @@ Seatbelt heirarchy and index
 
 build/ - the directory containing the slackbuild & source files.
 depend.sh - an .sh file which contains the dependancies as seatbelt commands.
+
+THESE BOTH NEED TO BE IN THE ROOT OF THE TARBALL WHEN YOU COMPRESS IT.

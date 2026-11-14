@@ -90,7 +90,6 @@ int main(int argc, char *argv[]) {
                     strcat(acccompile, dir);
                     strcat(acccompile, "/build/*.SlackBuild");
 
-                    if((strcmp(argv[2], "7zip")) == 0){return 1;};
                     
                     system(compilemod);
                     res = system(acccompile);
