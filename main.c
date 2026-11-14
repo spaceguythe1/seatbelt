@@ -84,7 +84,9 @@ int main(int argc, char *argv[]) {
                     char compilemod[512] = "chmod +x ";
                     strcat(compilemod, dir);
                     strcat(compilemod, "/build/*.SlackBuild");
-                    char acccompile[512] = "";
+                    char acccompile[512] = "cd ";
+                    strcat(acccompile, dir);
+                    strcat(acccompile, " && ");
                     strcat(acccompile, dir);
                     strcat(acccompile, "/build/*.SlackBuild");
 
