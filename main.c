@@ -13,12 +13,12 @@ int main(int argc, char *argv[]) {
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.32 - 14/11/2026\n");
+        printf("v1.42 - 14/11/2026\n");
     };
 
     if((strcmp("-g", argv[1])) == 0){
 
-        res = system("cd root/");
+        res = system("cd /root/");
         if(res != 0){
             printf("You must be root to run -g!\n");
             return 1;
