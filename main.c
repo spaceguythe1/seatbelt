@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.23 - 14/11/2026\n");
+        printf("v1.31 - 14/11/2026\n");
     };
 
     if((strcmp("-g", argv[1])) == 0){
@@ -81,6 +81,7 @@ int main(int argc, char *argv[]) {
                 if(res != 0){
                     printf("WARNING: NO DEPENDANCY FILE FOUND\n");
                     printf("this means that most likely to package you are trying to install was\n made incorrectly, please contact the creator of this package\n");
+                    return 1;
                 }
                 else{
 
@@ -92,7 +93,11 @@ int main(int argc, char *argv[]) {
                     strcat(depend, "/depend.sh");
 
                     system(chmod);
-                    system(depend);
+                    res = system(depend);
+                    if(res != 0){
+                        printf("Error occured when dealing with dependencies!");
+                        return 1;
+                    }
                     
                     char compilemod[512] = "chmod +x ";
                     strcat(compilemod, dir);
