@@ -9,8 +9,14 @@ int main(int argc, char *argv[]) {
         printf("USAGE--\n");
         printf("-h - shows this\n");
         printf("-g PACKAGE - gets and installs the PACKAGE package\n");
-    }
-    else if((strcmp("-g", argv[1])) == 0){
+    };
+    
+    if((strcmp("-v", argv[1])) == 0){
+        printf("SEATBELT - Slackware compiling package manager.\n");
+        printf("v1.23 - 14/11/2026");
+    };
+
+    if((strcmp("-g", argv[1])) == 0){
         printf("Checking for connection...\n");
         res = system("nc -zv disee.ddns.net 21\n");
         if(res != 0){
@@ -41,7 +47,7 @@ int main(int argc, char *argv[]) {
             strcat(opener, closer);
             res = system(opener);
             if(res != 0){
-                printf("Download failed.\n");
+                printf("Download failed, This package might not be avaliable or you spelt it wrong.\n");
                 return 1;
             }
             else{
