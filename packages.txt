@@ -1,13 +1,13 @@
 this isnt used by the manager as it dosent use a package list.
 
-7zip.tar.xz               dragonbox.tar.xz       libcdr.tar.xz       llvm-opt.tar.xz               perl-JSON-XS.tar.xz            uasm.tar.xz
-apache-ant.tar.xz         fastfetch.tar.xz       libcmis.tar.xz      md4c.tar.xz                   perl-Types-Serialiser.tar.xz   vscodium.tar.xz
-appstream-glib.tar.xz     fast_float.tar.xz      libe-book.tar.xz    myman.tar.xz                  prismlauncher.tar.xz           xcb-util-xrm.tar.xz
-btop.tar.xz               flatpak.tar.xz         libev.tar.xz        nodejs22.tar.xz               qsstv.tar.xz                   xdg-desktop-portal-gtk.tar.xz
-bubblewrap.tar.xz         gamemode.tar.xz        libfreehand.tar.xz  OpenJDK17.tar.xz              qt6.tar.xz                     xmlsec.tar.xz
-cmake-opt.tar.xz          google-go-lang.tar.xz  liblangtag.tar.xz   OpenJDK21.tar.xz              retroarch.tar.xz               yajl.tar.xz
-cmark.tar.xz              hamlib.tar.xz          libmspub.tar.xz     OpenJDK8.tar.xz               routino.tar.xz                 zulu-openjdk17.tar.xz
-cppunit.tar.xz            html5lib.tar.xz        libreoffice.tar.xz  ostree.tar.xz                 simde.tar.xz
-dmenu.tar.xz              i3.tar.xz              librewolf.tar.xz    perl-AnyEvent.tar.xz          supertuxkart.tar.xz
-doas.tar.xz               kitty.tar.xz           librsync.tar.xz     perl-Archive-Zip.tar.xz       tomlplusplus.tar.xz
-double-conversion.tar.xz  libabw.tar.xz          libzmf.tar.xz       perl-Canary-Stability.tar.xz  ttf-nerd-fonts-symbols.tar.xz
+7zip.tar.xz               dragonbox.tar.xz       libcdr.tar.xz       llvm-opt.tar.xz               perl-Types-Serialiser.tar.xz   vscodium.tar.xz
+apache-ant.tar.xz         fastfetch.tar.xz       libcmis.tar.xz      md4c.tar.xz                   prismlauncher.tar.xz           xcb-util-xrm.tar.xz
+appstream-glib.tar.xz     fast_float.tar.xz      libe-book.tar.xz    myman.tar.xz                  qsstv.tar.xz                   xdg-desktop-portal-gtk.tar.xz
+btop.tar.xz               flatpak.tar.xz         libev.tar.xz        nodejs22.tar.xz               qt6.tar.xz                     xmlsec.tar.xz
+bubblewrap.tar.xz         gamemode.tar.xz        libfreehand.tar.xz  OpenJDK17.tar.xz              retroarch.tar.xz               yajl.tar.xz
+cmake-opt.tar.xz          google-go-lang.tar.xz  liblangtag.tar.xz   OpenJDK8.tar.xz               routino.tar.xz                 zulu-openjdk17.tar.xz
+cmark.tar.xz              hamlib.tar.xz          libmspub.tar.xz     ostree.tar.xz                 simde.tar.xz
+cppunit.tar.xz            html5lib.tar.xz        libreoffice.tar.xz  perl-AnyEvent.tar.xz          supertuxkart.tar.xz
+dmenu.tar.xz              i3.tar.xz              librewolf.tar.xz    perl-Archive-Zip.tar.xz       tomlplusplus.tar.xz
+doas.tar.xz               kitty.tar.xz           librsync.tar.xz     perl-Canary-Stability.tar.xz  ttf-nerd-fonts-symbols.tar.xz
+double-conversion.tar.xz  libabw.tar.xz          libzmf.tar.xz       perl-JSON-XS.tar.xz           uasm.tar.xz
