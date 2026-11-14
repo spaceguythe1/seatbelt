@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
             strcat(opener, closer);
             res = system(opener);
             if(res != 0){
-                printf("Download failed, This package might not be avaliable or you spelt it wrong.\n");
+                printf("Download failed, This package might not be avaliable or you spelt it wrong. (CHECK PACKAGES.txt)\n");
                 return 1;
             }
             else{
