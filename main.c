@@ -9,12 +9,40 @@ int main(int argc, char *argv[]) {
         printf("USAGE--\n");
         printf("-h - shows this\n");
         printf("-g PACKAGE - gets and installs the PACKAGE package\n");
+        printf("-v - shows your version and build date\n");
+        printf("-r PACKAGE - removes PACKAGE package, can be useful for updates.");
     };
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.42 - 14/11/2026\n");
+        printf("v1.57 - 14/11/2026\n");
     };
+
+    if((strcmp("-r", argv[1])) == 0){
+        if(argc < 3){
+                printf("Please specify a package\n");
+                return 1;
+        }
+        printf("Searching for %s in /var/log/packages...\n", argv[2]);
+        char sdiasda[231] = "ls /var/log/packages | grep ";
+        strcat(sdiasda, argv[2]);
+        res = system(sdiasda);
+        if(res == 0){
+            printf("Removing %s...\n", argv[2]);
+            char removepkg[512] = "removepkg ";
+            strcat(removepkg, argv[2]);
+            res = system(removepkg);
+            if(res != 0){
+                printf("Package removal failed for some reason.\n");
+                return 1;
+            }
+            return 0;
+        }
+        else{
+            printf("Package %s not installed.\n", argv[2]);
+            return 1;
+        }
+    }
 
     if((strcmp("-g", argv[1])) == 0){
 
