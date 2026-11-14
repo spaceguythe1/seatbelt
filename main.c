@@ -17,6 +17,13 @@ int main(int argc, char *argv[]) {
     };
 
     if((strcmp("-g", argv[1])) == 0){
+
+        res = system("cd root/");
+        if(res != 0){
+            printf("You must be root to run -g!");
+            return 1;
+        }
+
         printf("Checking for connection...\n");
         res = system("nc -zv disee.ddns.net 21\n");
         if(res != 0){
