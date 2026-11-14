@@ -49,14 +49,11 @@ int main(int argc, char *argv[]) {
 
                 char dir[512] = "/tmp/";
                 strcat(dir, argv[2]);
-                char mkdir[512] = "mkdir ";
-                strcat(mkdir, dir);
-                system(mkdir);
+
 
                 char tar[512] = "tar xvf /tmp/";
                 strcat(tar, argv[2]);
-                strcat(tar, ".tar.xz -C ");
-                strcat(tar, dir);
+                strcat(tar, ".tar.xz -C /tmp/");
                 system(tar);
 
                 char rmtar[512] = "rm -f /tmp/";
@@ -73,10 +70,26 @@ int main(int argc, char *argv[]) {
                     printf("this means that most likely to package you are trying to install was\n made incorrectly, please contact the creator of this package\n");
                 }
                 else{
-                    system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
-                    system("/tmp/seatbelt_tmp/*/depend.sh");
-                    system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
-                    res = system("/tmp/seatbelt_tmp/*/build/*.SlackBuild");
+
+                    char chmod[512] = "chmod +x ";
+                    strcat(chmod, dir);
+                    strcat(chmod, "/build/depend.sh");
+                    char depend[512] = "";
+                    strcat(depend, dir);
+                    strcat(depend, "/build/depend.sh");
+
+                    system(chmod);
+                    system(depend);
+                    
+                    char compilemod[512] = "chmod +x ";
+                    strcat(compilemod, dir);
+                    strcat(compilemod, "/build/*.SlackBuild");
+                    char acccompile[512] = "";
+                    strcat(acccompile, dir);
+                    strcat(acccompile, "/build/*.SlackBuild");
+
+                    system(compilemod);
+                    res = system(acccompile);
                     if(res != 0){
                         printf("Compilation failed for some reason.\n");
                         return 1;
@@ -87,7 +100,9 @@ int main(int argc, char *argv[]) {
                         printf("Installation failed for some reason.\n");
                         return 1;
                     }
-                    system("rm -r /tmp/seatbelt_tmp");
+                    char remove[512] = "rm -r /tmp/";
+                    strcat(remove, argv[2]);
+                    system(remove);
                 }
             };
 
