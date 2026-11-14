@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 int main(int argc, char *argv[]) {
     int res = 0;
     if((argc < 2) || (strcmp("-h", argv[1]) == 0)){
@@ -22,22 +23,19 @@ int main(int argc, char *argv[]) {
                 printf("Please specify a package\n");
                 return 1;
             }
-            
-            char sdiasda[231] = "ls /var/log/packages | grep -i ";
+            char sdiasda[231] = "ls /var/log/packages | grep ";
             strcat(sdiasda, argv[2]);
             res = system(sdiasda);
             if(res == 0){
                 printf("Package: %s already installed.\n", argv[2]);
                 return 1;
             };
-
-
-            char rm_cmd[512];
-            snprintf(rm_cmd, sizeof(rm_cmd), "rm -f /tmp/%s.tar.xz /tmp/%s.tgz", argv[2], argv[2]);
-            system(rm_cmd);
-
+            system("rm /tmp/*.tar.xz");
+            system("rm /tmp/*.tar.xz.*");
+            system("rm /tmp/*.tgz");
             char closer[512] = ".tar.xz -P /tmp/";
             char opener[512] = " wget -4 ftp://disee.ddns.net/";
+
 
             strcat(opener, argv[2]);
             strcat(opener, closer);
@@ -48,43 +46,51 @@ int main(int argc, char *argv[]) {
             }
             else{
                 printf("Download Succeeded, continuing...\n");
-                system("mkdir -p /tmp/seatbelt_tmp");
-                
-                char tar_cmd[512];
-                snprintf(tar_cmd, sizeof(tar_cmd), "tar xvf /tmp/%s.tar.xz -C /tmp/seatbelt_tmp/", argv[2]);
-                system(tar_cmd);
 
-                res = system("find /tmp/seatbelt_tmp/*/depend.sh");
-                printf("Resolving Dependencies...\n");
+                char dir[512] = "/tmp/";
+                strcat(dir, argv[2]);
+                char mkdir[512] = "mkdir ";
+                strcat(mkdir, dir);
+                system(mkdir);
+
+                char tar[512] = "tar xvf /tmp/";
+                strcat(tar, argv[2]);
+                strcat(tar, ".tar.xz -C ");
+                strcat(tar, dir);
+                system(tar);
+
+                char rmtar[512] = "rm -f /tmp/";
+                strcat(rmtar, argv[2]);
+                strcat(rmtar, ".tar.xz");
+
+                char find[512] = "find /tmp/";
+                strcat(find, argv[2]);
+                strcat(find, "/build/depend.sh");
+                res = system(find);
+                
                 if(res != 0){
                     printf("WARNING: NO DEPENDANCY FILE FOUND\n");
-                    printf("this means that most likely to package you are trying to install was made incorrectly, please contact the creator of this package\n");
+                    printf("this means that most likely to package you are trying to install was\n made incorrectly, please contact the creator of this package\n");
                 }
                 else{
                     system("chmod +x /tmp/seatbelt_tmp/*/depend.sh");
                     system("/tmp/seatbelt_tmp/*/depend.sh");
-                }          
-
-                system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
-                res = system("/tmp/seatbelt_tmp/*/build/*.SlackBuild");
-                if(res != 0){
-                    printf("Compilation failed for some reason.\n");
-                    return 1;
+                    system("chmod +x /tmp/seatbelt_tmp/*/build/*.SlackBuild");
+                    res = system("/tmp/seatbelt_tmp/*/build/*.SlackBuild");
+                    if(res != 0){
+                        printf("Compilation failed for some reason.\n");
+                        return 1;
+                    }
+                    system("sleep 1");
+                    res = system("installpkg /tmp/*.tgz");
+                    if(res != 0){
+                        printf("Installation failed for some reason.\n");
+                        return 1;
+                    }
+                    system("rm -r /tmp/seatbelt_tmp");
                 }
-                
-                system("sleep 1");
-                
-                char install_cmd[512];
-                snprintf(install_cmd, sizeof(install_cmd), "installpkg /tmp/%s*.tgz", argv[2]);
-                res = system(install_cmd);
-                
-                if(res != 0){
-                    printf("Installation failed for some reason.\n");
-                    return 1;
-                }
-                
-                system("rm -rf /tmp/seatbelt_tmp");
             };
+
         };
     }
     return 0;
