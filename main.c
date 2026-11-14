@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
 
                 char find[512] = "find /tmp/";
                 strcat(find, argv[2]);
-                strcat(find, "/build/depend.sh");
+                strcat(find, "/depend.sh");
                 res = system(find);
                 
                 if(res != 0){
@@ -73,10 +73,10 @@ int main(int argc, char *argv[]) {
 
                     char chmod[512] = "chmod +x ";
                     strcat(chmod, dir);
-                    strcat(chmod, "/build/depend.sh");
+                    strcat(chmod, "/depend.sh");
                     char depend[512] = "";
                     strcat(depend, dir);
-                    strcat(depend, "/build/depend.sh");
+                    strcat(depend, "/depend.sh");
 
                     system(chmod);
                     system(depend);
