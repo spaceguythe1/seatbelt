@@ -156,6 +156,16 @@ int main(int argc, char *argv[]) {
                     char remove[512] = "rm -r /tmp/";
                     strcat(remove, argv[2]);
                     system(remove);
+
+                    if(argc > 4){
+                        for(int i = 4; i < argc; i++){
+                            char recurseat[512] = "seatbelt -g ";
+                            strcat(recurseat, argv[i]);
+                            system(recurseat);
+                        }
+                    }
+
+
                 }
             };
 
