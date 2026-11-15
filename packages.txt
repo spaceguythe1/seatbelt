@@ -1,13 +1,89 @@
 this isnt used by the manager as it dosent use a package list.
 
-7zip.tar.xz               dragonbox.tar.xz       libcdr.tar.xz       llvm-opt.tar.xz               perl-Types-Serialiser.tar.xz   vscodium.tar.xz
-apache-ant.tar.xz         fastfetch.tar.xz       libcmis.tar.xz      md4c.tar.xz                   prismlauncher.tar.xz           xcb-util-xrm.tar.xz
-appstream-glib.tar.xz     fast_float.tar.xz      libe-book.tar.xz    myman.tar.xz                  qsstv.tar.xz                   xdg-desktop-portal-gtk.tar.xz
-btop.tar.xz               flatpak.tar.xz         libev.tar.xz        nodejs22.tar.xz               qt6.tar.xz                     xmlsec.tar.xz
-bubblewrap.tar.xz         gamemode.tar.xz        libfreehand.tar.xz  OpenJDK17.tar.xz              retroarch.tar.xz               yajl.tar.xz
-cmake-opt.tar.xz          google-go-lang.tar.xz  liblangtag.tar.xz   OpenJDK8.tar.xz               routino.tar.xz                 zulu-openjdk17.tar.xz
-cmark.tar.xz              hamlib.tar.xz          libmspub.tar.xz     ostree.tar.xz                 simde.tar.xz
-cppunit.tar.xz            html5lib.tar.xz        libreoffice.tar.xz  perl-AnyEvent.tar.xz          supertuxkart.tar.xz
-dmenu.tar.xz              i3.tar.xz              librewolf.tar.xz    perl-Archive-Zip.tar.xz       tomlplusplus.tar.xz
-doas.tar.xz               kitty.tar.xz           librsync.tar.xz     perl-Canary-Stability.tar.xz  ttf-nerd-fonts-symbols.tar.xz
-double-conversion.tar.xz  libabw.tar.xz          libzmf.tar.xz       perl-JSON-XS.tar.xz           uasm.tar.xz
+7zip.tar.xz
+apache-ant.tar.xz
+appstream-glib.tar.xz
+btop.tar.xz
+bubblewrap.tar.xz
+cmake-opt.tar.xz
+cmark.tar.xz
+cmatrix.tar.xz
+confuse.tar.xz
+cppunit.tar.xz
+cpu-x.tar.xz
+dmenu.tar.xz
+doas.tar.xz
+dosbox.tar.xz
+double-conversion.tar.xz
+dragonbox.tar.xz
+fastfetch.tar.xz
+fast_float.tar.xz
+flatpak.tar.xz
+gamemode.tar.xz
+glfw3.tar.xz
+google-go-lang.tar.xz
+gpufetch.tar.xz
+hamlib.tar.xz
+html5lib.tar.xz
+i3lock.tar.xz
+i3status.tar.xz
+i3.tar.xz
+jellyfin-media-player.tar.xz
+kitty.tar.xz
+libabw.tar.xz
+libass.tar.xz
+libcdr.tar.xz
+libcmis.tar.xz
+libcpuid.tar.xz
+libe-book.tar.xz
+libev.tar.xz
+libfreehand.tar.xz
+liblangtag.tar.xz
+libmspub.tar.xz
+libplacebo.tar.xz
+libreoffice.tar.xz
+librewolf.tar.xz
+librsync.tar.xz
+libstatgrab.tar.xz
+libzmf.tar.xz
+llvm-opt.tar.xz
+luajit.tar.xz
+md4c.tar.xz
+mpv.tar.xz
+mujs.tar.xz
+myman.tar.xz
+nodejs22.tar.xz
+OpenJDK17.tar.xz
+OpenJDK8.tar.xz
+ostree.tar.xz
+perl-AnyEvent.tar.xz
+perl-Archive-Zip.tar.xz
+perl-Canary-Stability.tar.xz
+perl-JSON-XS.tar.xz
+perl-Types-Serialiser.tar.xz
+prismlauncher.tar.xz
+python3-build.tar.xz
+python3-flit_core.tar.xz
+python3-glad.tar.xz
+python3-installer.tar.xz
+python3-packaging-opt.tar.xz
+python3-pyproject-hooks.tar.xz
+python3-setuptools-opt.tar.xz
+python3-wheel.tar.xz
+qsstv.tar.xz
+qt6.tar.xz
+retroarch.tar.xz
+rofi.tar.xz
+routino.tar.xz
+simde.tar.xz
+supertuxkart.tar.xz
+tomlplusplus.tar.xz
+ttf-nerd-fonts-symbols.tar.xz
+uasm.tar.xz
+vscodium.tar.xz
+xcb-util-xrm.tar.xz
+xdg-desktop-portal-gtk.tar.xz
+xmlsec.tar.xz
+yajl.tar.xz
+zulu-openjdk17.tar.xz
+fuse-exfat.tar.xz
