@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
             res = system(sdiasda);
             if(res == 0){
                 printf("Package: %s already installed.\n", argv[2]);
-                return 1;
+                return 0;
             };
             system("rm /tmp/*.tar.xz");
             system("rm /tmp/*.tar.xz.*");
@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
                     system(chmod);
                     res = system(depend);
                     if(res != 0){
-                        printf("Error occured when dealing with dependencies!");
+                        printf("Error occured when dealing with dependencies!\n");
                         return 1;
                     }
                     
