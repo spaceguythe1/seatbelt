@@ -66,8 +66,9 @@ int main(int argc, char *argv[]) {
                 printf("Please specify a package\n");
                 return 1;
             }
-            char sdiasda[231] = "ls /var/log/packages | grep ";
+            char sdiasda[231] = "ls /var/log/packages/";
             strcat(sdiasda, argv[2]);
+            strcat(sdiasda, "*");
             res = system(sdiasda);
             if(res == 0){
                 printf("Package: %s already installed.\n", argv[2]);
