@@ -86,3 +86,4 @@ xdg-desktop-portal-gtk.tar.xz
 xmlsec.tar.xz
 yajl.tar.xz
 zulu-openjdk17.tar.xz
+fuse-exfat.tar.xz
