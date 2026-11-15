@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.57 - 14/11/2026\n");
+        printf("v1.62 - 14/11/2026\n");
     };
 
     if((strcmp("-r", argv[1])) == 0){
@@ -113,6 +113,9 @@ int main(int argc, char *argv[]) {
                 }
                 else{
 
+                    char makeposix[512] = "sed -i -e 's/\r$//' ";
+                    strcat(makeposix, dir);
+                    strcat(makeposix, "/depend.sh");
                     char chmod[512] = "chmod +x ";
                     strcat(chmod, dir);
                     strcat(chmod, "/depend.sh");
@@ -120,6 +123,7 @@ int main(int argc, char *argv[]) {
                     strcat(depend, dir);
                     strcat(depend, "/depend.sh");
 
+                    system(makeposix);
                     system(chmod);
                     res = system(depend);
                     if(res != 0){
