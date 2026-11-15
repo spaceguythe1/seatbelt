@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.62 - 14/11/2026\n");
+        printf("v1.72 - 14/11/2026\n");
     };
 
     if((strcmp("-r", argv[1])) == 0){
@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
             printf("Removing %s...\n", argv[2]);
             char removepkg[512] = "removepkg ";
             strcat(removepkg, argv[2]);
+            strcat(removepkg, "*");
             res = system(removepkg);
             if(res != 0){
                 printf("Package removal failed for some reason.\n");
