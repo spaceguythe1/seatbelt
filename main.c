@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
-        printf("v1.72 - 14/11/2026\n");
+        printf("v1.76 - 14/11/2026\n");
     };
 
     if((strcmp("-r", argv[1])) == 0){
@@ -24,8 +24,9 @@ int main(int argc, char *argv[]) {
                 return 1;
         }
         printf("Searching for %s in /var/log/packages...\n", argv[2]);
-        char sdiasda[231] = "ls /var/log/packages | grep ";
+        char sdiasda[231] = "ls /var/log/packages/";
         strcat(sdiasda, argv[2]);
+        strcat(sdiasda, "*");
         res = system(sdiasda);
         if(res == 0){
             printf("Removing %s...\n", argv[2]);
