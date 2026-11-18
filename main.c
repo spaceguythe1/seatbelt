@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
 
             
             char closer[512] = ".tar.xz -P /tmp/";
-            char opener[512] = " wget -4 ftp://disee.ddns.net/";
+            char opener[512] = " wget -4 ftp://disee.ddns.net/packages/";
 
 
             strcat(opener, argv[2]);
