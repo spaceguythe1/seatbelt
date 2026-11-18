@@ -74,9 +74,8 @@ int main(int argc, char *argv[]) {
                 printf("Package: %s already installed.\n", argv[2]);
                 return 0;
             };
-            system("rm /tmp/*.tar.xz");
-            system("rm /tmp/*.tar.xz.*");
-            system("rm /tmp/*.tgz");
+
+            
             char closer[512] = ".tar.xz -P /tmp/";
             char opener[512] = " wget -4 ftp://disee.ddns.net/";
 
