@@ -1,0 +1,2 @@
+this isnt used by the manager as it dosent use a package list.
+packages for the current repo (a lot)

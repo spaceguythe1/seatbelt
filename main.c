@@ -7,15 +7,50 @@ int main(int argc, char *argv[]) {
     int res = 0;
     if((argc < 2) || (strcmp("-h", argv[1]) == 0)){
         printf("USAGE--\n");
-        printf("-h - shows this\n");
-        printf("-g PACKAGE - gets and installs the PACKAGE package\n");
-        printf("-v - shows your version and build date\n");
-        printf("-r PACKAGE - removes PACKAGE package, can be useful for updates.");
+        printf("-h - shows this.\n");
+        printf("-g PACKAGE - gets and installs the PACKAGE package.\n");
+        printf("-v - shows your version and build date.\n");
+        printf("-r PACKAGE - removes PACKAGE package, can be useful for updates.\n");
+        printf("-f PACKAGE - finds out if PACKAGE package is avaliable.\n");
     };
 
     if((strcmp("-v", argv[1])) == 0){
         printf("SEATBELT - Slackware compiling package manager.\n");
         printf("v1.76 - 14/11/2026\n");
+    };
+
+    if((strcmp("-f", argv[1])) == 0){
+        if(argc < 3){
+            printf("Not enough arguments for this function\n");
+            return 1;
+        };
+        char safteychip[2048] = "curl -s --list-only ftp://disee.ddns.net/packages/";
+        res = system("cat /etc/seatbelt/seatbelt.conf | grep 15");
+        if("res == 0"){
+            strcat(safteychip, "15.0/");
+        }
+        else{
+            res = system("cat /etc/seatbelt/seatbelt.conf | grep current");
+            if(res != 0){
+                printf("ERROR: seatbelt not configured; if this is your first time running seatbelt this is expected.\n Please edit /etc/seatbelt/seatbelt.conf and place either 15.0 or current at the end of your file.\n Make sure that the 15.0 or current matches the version of slackware you installed\n");
+                return(1);
+            }
+            else{
+                strcat(safteychip, "current/");
+            };
+
+        };
+        strcat(safteychip, " | grep ");
+        strcat(safteychip, argv[2]);
+        res = system(safteychip);
+        if(res != 0){
+            printf("Package %s could not be found.\n", argv[2]);
+            return 1;
+        }
+        else if(res == 0){
+            printf("Package %s found.\n", argv[2]);
+            return 0;
+        };
     };
 
     if((strcmp("-r", argv[1])) == 0){
