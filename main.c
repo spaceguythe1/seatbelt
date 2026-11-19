@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
         printf("-v - shows your version and build date.\n");
         printf("-r PACKAGE - removes PACKAGE package, can be useful for updates.\n");
         printf("-f PACKAGE - finds out if PACKAGE package is avaliable.\n");
+        printf("-fo PACKAGE - finds out if PACKAGE package is avaliable in the opposite repo to the one you have configured.\n");
     };
 
     if((strcmp("-v", argv[1])) == 0){
@@ -37,6 +38,40 @@ int main(int argc, char *argv[]) {
             }
             else{
                 strcat(safteychip, "current/");
+            };
+
+        };
+        strcat(safteychip, " | grep ");
+        strcat(safteychip, argv[2]);
+        res = system(safteychip);
+        if(res != 0){
+            printf("Package %s could not be found.\n", argv[2]);
+            return 1;
+        }
+        else if(res == 0){
+            printf("Package %s found.\n", argv[2]);
+            return 0;
+        };
+    };
+
+    if((strcmp("-fo", argv[1])) == 0){
+        if(argc < 3){
+            printf("Not enough arguments for this function\n");
+            return 1;
+        };
+        char safteychip[2048] = "curl -s --list-only ftp://disee.ddns.net/packages/";
+        res = system("cat /etc/seatbelt/seatbelt.conf | grep 15");
+        if("res == 0"){
+            strcat(safteychip, "current/");
+        }
+        else{
+            res = system("cat /etc/seatbelt/seatbelt.conf | grep current");
+            if(res != 0){
+                printf("ERROR: seatbelt not configured; if this is your first time running seatbelt this is expected.\n Please edit /etc/seatbelt/seatbelt.conf and place either 15.0 or current at the end of your file.\n Make sure that the 15.0 or current matches the version of slackware you installed\n");
+                return(1);
+            }
+            else{
+                strcat(safteychip, "15.0/");
             };
 
         };
