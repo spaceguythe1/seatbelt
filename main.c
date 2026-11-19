@@ -54,6 +54,7 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
+
         printf("Checking for connection...\n");
         res = system("nc -zv disee.ddns.net 21\n");
         if(res != 0){
@@ -78,6 +79,25 @@ int main(int argc, char *argv[]) {
             
             char closer[512] = ".tar.xz -P /tmp/";
             char opener[512] = " wget -4 ftp://disee.ddns.net/packages/";
+
+            // conf shii
+            res = system("cat /etc/seatbelt/seatbelt.conf | grep 15");
+            if("res == 0"){
+                printf("Slackware version 15.0 found in /etc/seatbelt/seatbelt.conf\n");
+                strcat(opener, "15.0/");
+            }
+            else{
+                res = system("cat /etc/seatbelt/seatbelt.conf | grep current");
+                if(res != 0){
+                    printf("ERROR: seatbelt not configured; if this is your first time running seatbelt this is expected.\n Please edit /etc/seatbelt/seatbelt.conf and place either 15.0 or current at the end of your file.\n Make sure that the 15.0 or current matches the version of slackware you installed\n");
+                    return(1);
+                }
+                else{
+                    printf("Slackware version current found in /etc/seatbelt/seatbelt.conf\n");
+                    strcat(opener, "current/");
+                };
+
+            };
 
 
             strcat(opener, argv[2]);
